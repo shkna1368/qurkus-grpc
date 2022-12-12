@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+
+
+option java_multiple_files = true;
+option java_package = "ir.parsa.employee";
+
+message EmployeeRequest{
+  string	 nationalCode = 1;
+}
+message EmployeeResponse {
+  sint64	 id = 1;
+  string name = 2;
+  string family = 3;
+  string nationalCode = 4;
+
+
+}
+
+service GEmployeeService {
+  rpc getEmployee(EmployeeRequest) returns (EmployeeResponse) {};
+}
+
+
+
